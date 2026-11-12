@@ -158,6 +158,6 @@ def salir():
     flash("Sesión cerrada. ¡Vuelve pronto!", "info")
     return redirect(url_for("index"))
 
-
 if __name__ == "__main__":
-    app.run(debug=os.getenv("FLASK_DEBUG") == "1")
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
