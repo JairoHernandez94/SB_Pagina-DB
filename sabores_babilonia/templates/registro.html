@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Registro{% endblock %}
+{% block content %}
+<section class="auth">
+  <img class="auth-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+  <h1>Crea tu cuenta</h1>
+  <form method="post" class="form" novalidate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label>Nombre completo<input name="nombre" required autocomplete="name"></label>
+    <label>Correo<input type="email" name="email" required autocomplete="email"></label>
+    <label>Teléfono (opcional)<input name="telefono" autocomplete="tel"></label>
+    <label>Contraseña<input type="password" name="password" minlength="8" required autocomplete="new-password"></label>
+    <label>Confirmar contraseña<input type="password" name="confirmar" minlength="8" required autocomplete="new-password"></label>
+    <button class="btn btn-primary btn-block" type="submit"><span>Registrarme</span></button>
+  </form>
+  <p class="alt">¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Ingresa</a></p>
+</section>
+{% endblock %}
