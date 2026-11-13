@@ -92,3 +92,22 @@ a{color:var(--plum)}
 
 @media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center}.lead{margin:auto}.cta{justify-content:center}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.instagram-qr {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.instagram-qr img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.instagram-qr img:hover {
+  transform: scale(1.05);
+}
