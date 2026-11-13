@@ -1,4 +1,3 @@
-"""Sabores de Babilonia - Front + registro/ingreso con MySQL (Flask)."""
 import os
 import re
 import secrets
@@ -46,7 +45,6 @@ def login_required(view):
     return wrapped
 
 
-# --- Protección CSRF sencilla -------------------------------------------
 @app.before_request
 def csrf_protect():
     if request.method == "POST":
@@ -64,7 +62,6 @@ def inject_globals():
             "slogan": "Tés y frutos premium"}
 
 
-# --- Rutas ----------------------------------------------------------------
 @app.route("/")
 def index():
     return render_template("index.html", productos=PRODUCTOS)
